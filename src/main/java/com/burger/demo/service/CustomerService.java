@@ -22,4 +22,27 @@ public class CustomerService {
     }
 
 
+    public List<Customer> getAllCustomers() {
+        return cusRepo.findAll();
+    }
+
+    public Customer getCustomer(int id) {
+        return cusRepo.findById(id).get();
+    }
+
+    public void deleteCustomer(int id) {
+        cusRepo.deleteById(id);
+    }
+
+    public void updateCustomer(int id, Customer updatedCustomer) {
+        Customer existingCustomer = cusRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Customer not found"));
+
+        existingCustomer.setName(updatedCustomer.getName());
+        existingCustomer.setEmail(updatedCustomer.getEmail());
+        existingCustomer.setMobile(updatedCustomer.getMobile());
+        existingCustomer.setAddress(updatedCustomer.getAddress());
+
+        cusRepo.save(existingCustomer); // Save updated entity
+    }
 }

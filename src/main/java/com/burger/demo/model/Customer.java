@@ -7,24 +7,24 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String firstName;
-    private String lastName;
+    private String Name;
+    private String email;
     private String mobile;
-    private String nic;
+    private String address;
 
     public Customer() {
 
     }
 
-    public Customer(int id, String firstName, String lastName, String mobile, String nic) {
+    public Customer(int id, String name, String email, String mobile, String address) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        Name = name;
+        this.email = email;
         this.mobile = mobile;
-        this.nic = nic;
+        this.address = address;
     }
 
-    public int  getId() {
+    public int getId() {
         return id;
     }
 
@@ -32,20 +32,28 @@ public class Customer {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return Name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getMobile() {
@@ -56,11 +64,14 @@ public class Customer {
         this.mobile = mobile;
     }
 
-    public String getNic() {
-        return nic;
-    }
-
-    public void setNic(String nic) {
-        this.nic = nic;
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", Name='" + Name + '\'' +
+                ", email='" + email + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
