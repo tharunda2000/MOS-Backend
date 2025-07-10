@@ -7,24 +7,24 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String Name;
-    private String email;
+    private String firstName;
+    private String lastName;
     private String mobile;
-    private String address;
+    private String nic;
 
     public Customer() {
 
     }
 
-    public Customer(int id, String name, String email, String mobile, String address) {
+    public Customer(int id, String firstName, String lastName, String mobile, String nic) {
         this.id = id;
-        Name = name;
-        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.mobile = mobile;
-        this.address = address;
+        this.nic = nic;
     }
 
-    public int getId() {
+    public int  getId() {
         return id;
     }
 
@@ -32,28 +32,20 @@ public class Customer {
         this.id = id;
     }
 
-    public String getName() {
-        return Name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getMobile() {
@@ -64,14 +56,11 @@ public class Customer {
         this.mobile = mobile;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", Name='" + Name + '\'' +
-                ", email='" + email + '\'' +
-                ", mobile='" + mobile + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+    public String getNic() {
+        return nic;
+    }
+
+    public void setNic(String nic) {
+        this.nic = nic;
     }
 }
